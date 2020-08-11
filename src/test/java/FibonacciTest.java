@@ -4,16 +4,30 @@ import static org.hamcrest.CoreMatchers.*;
 import static org.hamcrest.MatcherAssert.*;
 
 public class FibonacciTest {
+
     @Test
     public void shouldReturnZeroWhenOne() {
         //given
         int testNumber = 1;
-        long shouldReturn = 0;
 
         //when
-        long result = Fibonacci.sumOfFibonacci(testNumber);
+        long result = Fibonacci.sumOfEvenFibonacci(testNumber);
 
         //then
+        long shouldReturn = 0;
+        assertThat(result, is(shouldReturn));
+    }
+
+    @Test
+    public void shouldReturnTwoWhenThree() {
+        //given
+        int testNumber = 3;
+
+        //when
+        long result = Fibonacci.sumOfEvenFibonacci(testNumber);
+
+        //then
+        long shouldReturn = 2;
         assertThat(result, is(shouldReturn));
     }
 
@@ -21,12 +35,12 @@ public class FibonacciTest {
     public void shouldReturnTwoWhenSeven() {
         //given
         int testNumber = 7;
-        long shouldReturn = 2;
 
         //when
-        long result = Fibonacci.sumOfFibonacci(testNumber);
+        long result = Fibonacci.sumOfEvenFibonacci(testNumber);
 
         //then
+        long shouldReturn = 2;
         assertThat(result, is(shouldReturn));
     }
 
@@ -34,12 +48,12 @@ public class FibonacciTest {
     public void shouldReturnTenWhenEight() {
         //given
         int testNumber = 8;
-        long shouldReturn = 10;
 
         //when
-        long result = Fibonacci.sumOfFibonacci(testNumber);
+        long result = Fibonacci.sumOfEvenFibonacci(testNumber);
 
         //then
+        long shouldReturn = 10;
         assertThat(result, is(shouldReturn));
     }
 
@@ -47,12 +61,12 @@ public class FibonacciTest {
     public void shouldReturnTenWhenFifteen() {
         //given
         int testNumber = 15;
-        long shouldReturn = 10;
 
         //when
-        long result = Fibonacci.sumOfFibonacci(testNumber);
+        long result = Fibonacci.sumOfEvenFibonacci(testNumber);
 
         //then
+        long shouldReturn = 10;
         assertThat(result, is(shouldReturn));
     }
 
@@ -60,13 +74,12 @@ public class FibonacciTest {
     public void shouldReturnOneHundredAndEightyEightWhenOneHundredAndfifty() {
         //given
         int testNumber = 150;
-        long shouldReturn = 188;
 
         //when
-        long result = Fibonacci.sumOfFibonacci(testNumber);
-        System.out.println(Fibonacci.sumOfFibonacci(4000000));
+        long result = Fibonacci.sumOfEvenFibonacci(testNumber);
 
         //then
+        long shouldReturn = 188;
         assertThat(result, is(shouldReturn));
     }
 }

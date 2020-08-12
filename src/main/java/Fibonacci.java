@@ -4,35 +4,34 @@ public class Fibonacci {
 //    }
 //
 //    public static long sumOfEvenFibonacci(int maxElementOfFibonacci) {
-//        if (maxElementOfFibonacci == 1) return 0;
-//        if (maxElementOfFibonacci == 2 || maxElementOfFibonacci == 3) return 2;
-//        int f1;
-//        int f2 = 2;
-//        int f3 = 3;
-//        long sum = 2;
-//        while (f3 <= maxElementOfFibonacci) {
-//            if (isEven(f3)) sum += f3;
-//            f1 = f2;
-//            f2 = f3;
-//            f3 = f1 + f2;
+//        if (maxElementOfFibonacci < 2) return 0;
+//        int secondLastElement;
+//        int lastElement = 1;
+//        int currentElement = 2;
+//        long sumOfEvenElements = 0;
+//        while (currentElement <= maxElementOfFibonacci) {
+//            if (isEven(currentElement)) sumOfEvenElements += currentElement;
+//            secondLastElement = lastElement;
+//            lastElement = currentElement;
+//            currentElement = secondLastElement + lastElement;
 //        }
-//        return sum;
+//        return sumOfEvenElements;
 //    }
 
     public static long sumOfEvenFibonacci(int maxElementOfFibonacci) {
         if (maxElementOfFibonacci < 2) return 0;
-        int f1;
-        int f2 = 1;
-        int f3 = 2;
-        long sum = 0;
-        while (f3 <= maxElementOfFibonacci) {
-            sum += f3;
+        int secondLastElement;
+        int lastElement = 1;
+        int currentElement = 2;
+        long sumOfEvenElements = 0;
+        while (currentElement <= maxElementOfFibonacci) {
+            sumOfEvenElements += currentElement;
             for (int i = 0; i < 3; i++) {
-                f1 = f2;
-                f2 = f3;
-                f3 = f1 + f2;
+                secondLastElement = lastElement;
+                lastElement = currentElement;
+                currentElement = secondLastElement + lastElement;
             }
         }
-        return sum;
+        return sumOfEvenElements;
     }
 }
